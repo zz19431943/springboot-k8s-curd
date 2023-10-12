@@ -9,7 +9,7 @@ pipeline{
         stage("Build Maven"){
             steps{
                 script{
-                    sh 'docker version'
+                    sh 'mvn clean install'
                 }
             }
         }
