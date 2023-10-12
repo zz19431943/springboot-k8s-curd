@@ -7,6 +7,8 @@ pipeline{
     
     environment {
         registry = "zz19431943/springboot-k8s-curd:1.0"
+        registryCredential = 'docker_hub_access_token_10122023'
+        dockerImage=''
     }
     
     stages{
@@ -25,5 +27,14 @@ pipeline{
         		}
       		}
     	}
+    	
+    	stage("Pushing image to Docker Hub"){
+            steps{
+                script{
+                    docker.withRegistry('',registryCredential)
+                    dockerImage.push()
+                }
+            }
+        }
     }
 }
