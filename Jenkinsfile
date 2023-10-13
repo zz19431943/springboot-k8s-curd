@@ -6,7 +6,7 @@ pipeline{
     }
     
     environment {
-        registry = "zz19431943/springboot-k8s-curd:1.0"
+        registry = "zz19431943/springboot-k8s-curd:1.1"
         registryCredential = 'docker_hub_access_token_10122023'
         dockerImage=''
     }
